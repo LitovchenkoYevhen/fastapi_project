@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 class UserModel(Base):
 	__tablename__ = 'user'
-	id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4())
+	id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
 	username: Mapped[str] = mapped_column(sa.String(), unique=True)
 	profile: Mapped['ProfileModel'] = relationship(
 		back_populates='user',
